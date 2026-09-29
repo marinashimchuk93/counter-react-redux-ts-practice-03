@@ -1,0 +1,10 @@
+.container {
+  composes: baseContainer from "../Common.module.css";
+}
+
+
+.buttonWrapper {
+  composes: baseButtonWrapper from "../Common.module.css";
+  gap: 20px;
+}
+

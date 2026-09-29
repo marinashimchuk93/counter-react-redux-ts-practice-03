@@ -1,0 +1,49 @@
+.container {
+  composes: baseContainer from "../Common.module.css"
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid var(--neon-blue);
+  border-radius: var(--border-radius-sub);
+  height: 110px;
+  box-sizing: border-box;
+}
+
+.inputBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputBlock span {
+  color: var(--neon-blue);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.inputBlock input {
+  width: 130px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 2px solid var(--neon-blue);
+  border-radius: var(--border-radius-sub);
+  color: var(--bg-dark);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+}
+
+.errorInput {
+  border: 2px solid var(--error-red) !important;
+  background-color: #ffe6e6 !important;
+}
+
+.buttonWrapper {
+  composes: baseButtonWrapper from "../Common.module.css";
+}

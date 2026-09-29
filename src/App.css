@@ -1,0 +1,18 @@
+:root {
+  --bg-dark: #1d222d;
+  --neon-blue: #61dafb;
+  --error-red: #ff4a4a;
+  --border-radius-main: 10px;
+  --border-radius-sub: 5px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+}
+
+

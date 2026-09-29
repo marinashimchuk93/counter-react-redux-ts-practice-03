@@ -1,0 +1,21 @@
+.baseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+  height: 220px;
+  padding: 15px;
+  background-color: var(--bg-dark);
+  border: 2px solid var(--neon-blue);
+  border-radius: var(--border-radius-main);
+  box-sizing: border-box;
+}
+
+.baseButtonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border: 2px solid var(--neon-blue);
+  border-radius: var(--border-radius-sub);
+}

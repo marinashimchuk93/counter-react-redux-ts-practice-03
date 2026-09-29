@@ -1,0 +1,31 @@
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  background-color: var(--neon-blue);
+  border-radius: var(--border-radius-sub);
+  padding: 0 15px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.normalText {
+  color: var(--bg-dark);
+}
+
+.errorText {
+  color: var(--error-red);
+}
+
+.errorTextMsg {
+  font-size: 22px;
+  color: var(--error-red);
+  text-align: center;
+}
+
+.textMessage {
+  font-size: 22px;
+  text-align: center;
+  color: var(--bg-dark);
+}
