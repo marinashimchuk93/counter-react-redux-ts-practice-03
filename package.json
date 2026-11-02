@@ -1,6 +1,6 @@
 {
   "homepage": "https://marinashimchuk93.github.io/counter-react-ts-practice-02",
-  "name": "todolist-01",
+  "name": "counter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,8 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "react-redux": "^9.3.1"
   },
   "devDependencies": {
     "@types/react": "19.0.2",

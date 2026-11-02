@@ -1,37 +1,36 @@
 import s from "./Setting.module.css";
 import {Button} from "../Button/Button.tsx";
 import {ChangeEvent} from "react";
+import {
+  setIsSettingsChangedAC, setMaxValueAC,
+  setSettingsAC, setStartValueAC
+} from "../../model/counter-reducer.ts";
+import {useAppDispatch} from "../../common/hooks/useAppDispatch.ts";
+import {useAppSelector} from "../../common/hooks/useAppSelector.ts";
 
-type SettingProps = {
-  maxValue: number;
-  startValue: number;
-  setMaxValue: (value: number) => void;
-  setStartValue: (value: number) => void;
-  onSet: () => void
-  isSettingsChanged: boolean
-  setIsSettingsChanged: (value: boolean) => void
-  isError: boolean
-};
+export const Setting = () => {
+  const maxValue = useAppSelector(state => state.counter.maxValue)
+  const startValue = useAppSelector(state => state.counter.startValue)
+  const isSettingsChanged = useAppSelector(state => state.counter.isSettingsChanged)
 
-export const Setting = (props: SettingProps) => {
-  const {
-    maxValue,
-    startValue,
-    setMaxValue,
-    setStartValue,
-    onSet,
-    isSettingsChanged,
-    setIsSettingsChanged, isError
-  } = props;
+  const dispatch = useAppDispatch()
+
+  const isError = startValue < 0 || maxValue <= startValue
+
+  const onSetHandler = () => {
+    if (!isError) {
+      dispatch(setSettingsAC())
+    }
+  }
 
   const changeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setMaxValue(Number(e.currentTarget.value));
-    setIsSettingsChanged(true);
+    dispatch(setMaxValueAC(Number(e.target.value)));
+    dispatch(setIsSettingsChangedAC(true));
   };
 
   const changeStartHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setStartValue(Number(e.currentTarget.value));
-    setIsSettingsChanged(true);
+    dispatch(setStartValueAC(Number(e.target.value)));
+    dispatch(setIsSettingsChangedAC(true));
   };
 
   return (
@@ -59,7 +58,7 @@ export const Setting = (props: SettingProps) => {
 
       <div className={s.buttonWrapper}>
         <Button
-          onClick={onSet}
+          onClick={onSetHandler}
           disabled={!isSettingsChanged || isError}
         >
           set

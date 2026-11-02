@@ -1,34 +1,28 @@
 import s from "./Counter.module.css"
 import {Button} from "../Button/Button.tsx";
 import {CounterDisplay} from "../CounterDisplay/CounterDisplay.tsx";
+import {useAppSelector} from "../../common/hooks/useAppSelector.ts";
+import {useAppDispatch} from "../../common/hooks/useAppDispatch.ts";
+import {setCountAC} from "../../model/counter-reducer.ts";
 
-type CounterProps = {
-  count: number
-  setCount: (value: number) => void
-  maxValue: number
-  startValue: number
-  isSettingsChanged: boolean
-  isError: boolean
-}
+export const Counter = () => {
+  const count = useAppSelector((state) => state.counter.count);
+  const maxValue = useAppSelector((state) => state.counter.maxValue);
+  const startValue = useAppSelector((state) => state.counter.startValue);
+  const isSettingsChanged = useAppSelector((state) => state.counter.isSettingsChanged);
 
-export const Counter = (props: CounterProps) => {
-  const {
-    count,
-    maxValue,
-    startValue,
-    setCount,
-    isSettingsChanged,
-    isError
-  } = props
+  const dispatch = useAppDispatch()
+
+  const isError = startValue < 0 || maxValue <= startValue;
 
   const onIncrement = () => {
     if (count < maxValue) {
-      setCount(count + 1);
+      dispatch(setCountAC(count + 1));
     }
   };
 
   const onReset = () => {
-    setCount(startValue);
+    dispatch(setCountAC(startValue));
   };
 
   const onIncrementDisabled = count === maxValue || isSettingsChanged || isError
