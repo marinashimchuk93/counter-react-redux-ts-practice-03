@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/counter-react-redux-ts-practice-03/',
+  base: "/counter-react-redux-ts-practice-03/",
 })
