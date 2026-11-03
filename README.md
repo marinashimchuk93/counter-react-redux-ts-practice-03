@@ -1,6 +1,6 @@
-# IT-INCUBATOR Todolist Project
+IT-INCUBATOR Counter Project
 
-## React + TypeScript + Vite
+## React + Redux Toolkit + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite.
 
@@ -18,7 +18,5 @@ pnpm i
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 Happy hacking 🚀
-# counter-react-redux-ts-practice-03
+
